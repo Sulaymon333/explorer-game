@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Explorer Game | Contact</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a class="logo" href="index.html">
+                    <h1 class="logo">Explorer Game</h1>
+                </a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructions.html">Instructions</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a class="selected" href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="hero hero-contact">
+                <div class="container section-text">
+                    <h1>Contact Us</h1>
+                    <p>
+                        We are happy to hear your feedback or even more client projects that you have. Please fill the
+                        form below
+                    </p>
+                    <form class="contact-form" method="POST" data-netlify="true" name="Contact Form" action="/#contact">
+                        <div class="form-row">
+                            <label for="full-name">Full Name<sup>*</sup>:</label>
+                            <input type="text" id="full-name" name="Full Name" placeholder="Mikko" required />
+                        </div>
+                        <div class="form-row">
+                            <label for="email-address">Email Address<sup>*</sup>:</label>
+                            <input
+                                type="email"
+                                id="email-address"
+                                name="Email Address"
+                                placeholder="mikko@gmail.com"
+                                required
+                            />
+                        </div>
+                        <div class="form-row">
+                            <label for="phone-number">Phone number<sup>*</sup>:</label>
+                            <input
+                                type="tel"
+                                id="phone-number"
+                                name="Phone Number"
+                                placeholder="+358 (0) 56 378 7613"
+                                required
+                            />
+                        </div>
+                        <div class="form-row">
+                            <label for="message">Message<sup>*</sup>:</label>
+                            <textarea
+                                name="message"
+                                id="message"
+                                name="message"
+                                cols="25"
+                                rows="10"
+                                required
+                            ></textarea>
+                        </div>
+                        <button class="btn btn-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+
+                <div class="overlay"></div>
+            </section>
+        </main>
+        <footer>
+            <p>
+                Explorer Game Website &copy; 2021. Designed and developed by
+                <a href="https://suly.dev" target="_blank">Sulaymon</a> &
+                <a href="https://jarigames.com" target="_blank">Jari</a>
+            </p>
+        </footer>
+
+        <script src="./index.js"></script>
+    </body>
+</html>

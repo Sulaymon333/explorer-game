@@ -1,0 +1,754 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,700;1,300&family=Audiowide&family=Baloo+Bhaina+2:wght@700&display=swap');
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-background: rgba(119, 119, 245, 0.8);
+    --assent-color: orange;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+header {
+    background: var(--main-background);
+}
+.logo {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav {
+    height: 70px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+}
+
+nav h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+}
+nav h1 > span {
+    color: var(--assent-color);
+    font-weight: 700;
+    font-style: italic;
+}
+
+.assent {
+    color: var(--assent-color);
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 70px;
+}
+nav ul li {
+    display: flex;
+    align-items: center;
+    padding: 0 0.9rem;
+    height: 100%;
+    font-size: clamp(1rem, 1vw, 1.4rem);
+}
+nav ul li:hover {
+    background: var(--main-background);
+}
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a.selected {
+    border-bottom: clamp(2px, 0.3vw, 4px) solid orange;
+}
+
+section {
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+
+/* hero */
+.hero {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center -100px;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+.hero-home,
+.hero-instructions,
+.hero-about,
+.hero-contact {
+    background-image: url('./images/main-bg.png');
+}
+
+.container {
+    color: white;
+    width: 80%;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.container h1 {
+    font-size: clamp(2rem, 2.5vw, 3.4rem);
+    width: 50%;
+    margin: 10vw 0 1vw 0;
+}
+
+.container p,
+.description {
+    font-size: clamp(1rem, 1vw, 1.4rem);
+    margin-bottom: 2.5rem;
+    text-transform: initial;
+}
+.description {
+    width: 50%;
+}
+.container a {
+    color: #fff;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: rgba(119, 119, 245, 0.7);
+    mix-blend-mode: overlay;
+}
+
+/*==== INSTRUCTIONS ====*/
+.section-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-text h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 3.5rem;
+}
+.section-text p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+.keys {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 40%;
+    margin: 0 auto;
+}
+.key {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        248.19deg,
+        #94f8e0 0.94%,
+        rgba(226, 130, 193, 0.571804) 47.97%,
+        rgba(106, 111, 230, 0) 110.77%
+    );
+    border-radius: 30px;
+    flex: 150px 0 1;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin: 1.5rem;
+}
+.key h2 {
+    font-family: 'Audiowide', cursive;
+}
+.key:nth-child(3) p {
+    font-size: 1.5rem;
+}
+
+.key p {
+    font-family: 'Baloo Bhaina 2', cursive;
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+/*==== ABOUT ====*/
+.hero-about a {
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    padding: 0.5rem 0.9rem;
+    background: #9993e3;
+    position: relative;
+}
+.hero-about a::after {
+    position: absolute;
+    content: '';
+    height: 3px;
+    width: 70%;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    bottom: 10px;
+    left: 13px;
+}
+
+.game-screens {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.screen {
+    width: 300px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20%;
+    overflow: hidden;
+    margin: 2.5rem;
+}
+.screen:nth-child(1) {
+    background-image: url('./images/image_mg1-2.png');
+}
+.screen:nth-child(2) {
+    background-image: url('./images/image_mainmenu.png');
+    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+.screen:nth-child(3) {
+    background-image: url('./images/image_mg2-1.png');
+}
+
+/*==== CONTACT ====*/
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    color: #9993e3;
+    padding: 2rem;
+    background: #9a93e3a2;
+    border-radius: 10px;
+}
+.form-row {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+label:not(.option) {
+    flex-basis: 30%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: capitalize;
+}
+.option {
+    padding-right: 1rem;
+}
+input,
+textarea,
+select {
+    flex: 1;
+    padding: 0.5rem;
+    font-size: 14px;
+    color: var(--clr-grey-5);
+    font-family: var(--ff-primary);
+    border-width: 1px;
+    border: 1px solid var(--clr-grey-8);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+    color: var(--clr-grey-9);
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+    color: var(--clr-grey-9);
+}
+input::placeholder,
+textarea::placeholder {
+    color: var(--clr-grey-9);
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: 0 2px 4px #719ece;
+    border: 2px solid var(--clr-grey-7);
+}
+
+sup {
+    font-size: 0.7rem;
+    color: red;
+}
+
+.btn-submit {
+    align-self: flex-end;
+    margin-top: 1rem;
+}
+
+/*==== FOOTER ====*/
+footer {
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    padding: 1rem;
+    bottom: 0;
+    color: #222;
+    background: rgba(119, 119, 245, 0.8);
+    color: #fff;
+}
+
+footer p > a {
+    background: white;
+    color: var(--main-background);
+    padding: 0 0.3rem;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    font-size: clamp(1rem, 1vw, 1.4rem);
+    border: solid 2px rgba(119, 119, 245, 0.8);
+    border-radius: 0.3rem;
+    transition: all 0.5s;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+}
+
+.btn:hover {
+    border-color: orange;
+}
+
+.services {
+    background-color: rgba(119, 119, 245, 0.7);
+}
+.services .box-container {
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+.service-description {
+    background-color: rgba(119, 119, 245, 0.7);
+}
+.box {
+    flex: 1 0 350px;
+}
+.box:not(:last-child) {
+    margin-right: 2rem;
+    margin-bottom: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-home p {
+        width: 70%;
+    }
+
+    /* contact form */
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.5rem;
+    }
+    label {
+        margin-bottom: 0.6rem;
+    }
+    .btn-submit {
+        font-size: 12px;
+    }
+}
