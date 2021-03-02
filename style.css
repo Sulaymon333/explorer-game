@@ -323,7 +323,7 @@ section {
     width: 100%;
     text-align: left;
     color: #9993e3;
-    padding: 2rem;
+    /* padding: 1rem; */
     /* background: #9a93e3a2; */
     /* border-radius: 10px; */
 }
@@ -434,6 +434,9 @@ footer p > a {
     .hero-home p {
         width: 70%;
     }
+    form {
+        padding: 0;
+    }
 
     /* contact form */
     .form-row {
@@ -491,14 +494,14 @@ footer p > a {
 
     .open {
         display: flex;
-        height: calc(100vh - 50px);
+        height: calc(100vh - 70px);
     }
 
     .game-intro {
-        width: 85%;
+        width: 95%;
     }
     .description {
-        width: 85%;
+        width: 95%;
     }
 
     .keys {
