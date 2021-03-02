@@ -6,15 +6,22 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 :root {
     --main-background: rgba(119, 119, 245, 0.8);
     --assent-color: orange;
+    --h1-font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    --h2-font-size: clamp(1.3rem, 1.5vw, 2rem);
+    --p-font-size: clamp(1rem, 1vw, 1.4rem);
 }
 
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 header {
     background: var(--main-background);
@@ -42,7 +49,7 @@ nav {
 nav h1 {
     color: white;
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(1.25rem, 1.5vw, 2.5rem);
+    font-size: var(--h1-font-size);
 }
 nav h1 > span {
     color: var(--assent-color);
@@ -70,7 +77,7 @@ nav h1 > span {
     align-items: center;
     padding: 0 0.9rem;
     height: 100%;
-    font-size: clamp(1rem, 1vw, 1.4rem);
+    font-size: var(--p-font-size);
 }
 .nav-list li:hover {
     background: var(--main-background);
@@ -78,6 +85,24 @@ nav h1 > span {
 .nav-list li a {
     text-decoration: none;
     color: white;
+    position: relative;
+}
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: clamp(2px, 0.3vw, 4px);
+    background: orange;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in;
+}
+
+.nav-list li:hover a::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .nav-list li a.selected {
@@ -93,8 +118,8 @@ section {
 .hero {
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center -100px;
-    height: 100vh;
+    background-position: center top;
+    min-height: 100vh;
     width: 100vw;
     position: relative;
 }
@@ -115,13 +140,13 @@ section {
 }
 
 .container h1 {
-    font-size: clamp(2rem, 2.5vw, 3.4rem);
+    font-size: var(--h1-font-size);
     margin-bottom: 1.5rem;
 }
 
 .container p,
 .description {
-    font-size: clamp(1rem, 1vw, 1.4rem);
+    font-size: var(--p-font-size);
     margin-bottom: 2.5rem;
     text-transform: initial;
 }
@@ -132,7 +157,7 @@ section {
     padding: 1.5rem;
 }
 .description {
-    width: 50%;
+    width: 65%;
 }
 .container a {
     color: #fff;
@@ -146,6 +171,9 @@ section {
     background: rgba(119, 119, 245, 0.7);
     mix-blend-mode: overlay;
 }
+.overlay-2 {
+    height: 100%;
+}
 
 /*==== INSTRUCTIONS ====*/
 .section-text {
@@ -153,14 +181,17 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(180deg, rgba(152, 145, 225, 0.62) 0%, rgba(152, 145, 225, 0) 100%);
+    padding: 1.5rem;
 }
 .section-text h1 {
     width: 100%;
     text-align: center;
     margin-top: 3.5rem;
+    font-size: var(--h1-font-size);
 }
 .section-text p {
-    font-size: 1.5rem;
+    font-size: var(--p-font-size);
     text-align: center;
 }
 .keys {
@@ -182,38 +213,40 @@ section {
         rgba(106, 111, 230, 0) 110.77%
     );
     border-radius: 30px;
-    flex: 150px 0 1;
+    flex: clamp(125px, 15vw, 160px) 1 1;
     padding: 1rem;
-    font-size: 1.2rem;
     text-transform: uppercase;
     margin: 1.5rem;
 }
 .key h2 {
     font-family: 'Audiowide', cursive;
+    font-size: var(--h2-font-size);
 }
 .key:nth-child(3) p {
     font-size: 1.5rem;
+    font-size: clamp(1.3rem, 1.1vw, 1.6rem);
 }
 
 .key p {
     font-family: 'Baloo Bhaina 2', cursive;
     text-transform: capitalize;
     font-size: 2rem;
+    font-size: clamp(2rem, 1.2vw, 1.8rem);
 }
 
 /*==== ABOUT ====*/
-.hero-about a {
+.hero-about .download-link {
     text-decoration: none;
     display: inline-block;
     margin-bottom: 1.2rem;
-    font-size: 1.5rem;
+    font-size: var(--h1-font-size);
     font-weight: bold;
     letter-spacing: 3px;
     padding: 0.5rem 0.9rem;
     background: #9993e3;
     position: relative;
 }
-.hero-about a::after {
+.hero-about .download-link::after {
     position: absolute;
     content: '';
     height: 3px;
@@ -236,20 +269,51 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 20%;
     overflow: hidden;
     margin: 2.5rem;
 }
 .screen:nth-child(1) {
-    background-image: url('./images/image_mg1-2.png');
+    background-image: url('./images/left.png');
 }
 .screen:nth-child(2) {
-    background-image: url('./images/image_mainmenu.png');
-    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    background-image: url('./images/center.png');
 }
 .screen:nth-child(3) {
-    background-image: url('./images/image_mg2-1.png');
+    background-image: url('./images/right.png');
+}
+
+.hero-about .down-arrow {
+    display: flex;
+    justify-content: center;
+    background: transparent;
+    text-decoration: none;
+    position: relative;
+    top: 70px !important;
+    z-index: 2000;
+}
+
+.video-section {
+    position: relative;
+    min-height: 50vh;
+    background-image: url('./images/image_mg1-3.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+.video-section img {
+    width: 100%;
+}
+
+.video-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+}
+
+.video-info h1 {
+    padding-bottom: 1.5rem;
 }
 
 /*==== CONTACT ====*/
@@ -260,8 +324,8 @@ section {
     text-align: left;
     color: #9993e3;
     padding: 2rem;
-    background: #9a93e3a2;
-    border-radius: 10px;
+    /* background: #9a93e3a2; */
+    /* border-radius: 10px; */
 }
 .form-row {
     display: flex;
@@ -284,10 +348,20 @@ select {
     flex: 1;
     padding: 0.5rem;
     font-size: 14px;
-    color: var(--clr-grey-5);
-    font-family: var(--ff-primary);
+    color: rgb(153, 147, 227);
     border-width: 1px;
-    border: 1px solid var(--clr-grey-8);
+    border: 1px solid rgb(153, 147, 227);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgb(153, 147, 227);
+}
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none !important;
+    box-shadow: 0 2px 4px #719ece;
 }
 
 sup {
@@ -304,7 +378,7 @@ sup {
 footer {
     width: 100%;
     text-align: center;
-    position: fixed;
+    /* position: fixed; */
     padding: 1rem;
     bottom: 0;
     color: #222;
@@ -322,7 +396,7 @@ footer p > a {
 .btn {
     padding: 0.7rem 1.2rem;
     border: none;
-    font-size: clamp(1rem, 1vw, 1.4rem);
+    font-size: var(--p-font-size);
     border: solid 3px rgb(119, 119, 245);
     background: rgba(119, 119, 245, 0.8);
     border-radius: 0.3rem;
@@ -396,8 +470,11 @@ footer p > a {
         position: absolute;
         flex-direction: column;
         top: 70px;
-        border-top: 3px solid #867cf4;
+        bottom: 0;
         left: 0;
+        right: 0;
+        border-top: 3px solid #867cf4;
+        border-bottom: 3px solid #867cf4;
         background-color: rgb(145, 145, 240);
         display: none;
         height: 0;
@@ -411,19 +488,23 @@ footer p > a {
         display: flex;
         justify-content: center;
     }
-    .nav-list li:hover a {
-        border-bottom: clamp(2px, 0.3vw, 4px) solid orange;
-    }
+
     .open {
         display: flex;
         height: calc(100vh - 50px);
     }
 
     .game-intro {
-        width: 80%;
+        width: 85%;
+    }
+    .description {
+        width: 85%;
     }
 
     .keys {
         width: 70%;
+    }
+    .hero-about .down-arrow {
+        display: none !important;
     }
 }

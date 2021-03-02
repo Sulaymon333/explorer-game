@@ -1,7 +1,6 @@
 const menuBtn = document.querySelector('.menu-toggle');
 const navList = document.querySelector('.nav-list');
 
-let open = false;
 menuBtn.addEventListener('click', () => {
     if (navList.classList.contains('open')) {
         navList.classList.remove('open');
