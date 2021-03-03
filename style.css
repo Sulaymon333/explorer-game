@@ -127,7 +127,7 @@ section {
 .hero-instructions,
 .hero-about,
 .hero-contact {
-    background-image: url('./images/main-bg.png');
+    background-image: url('./images/main-bg-min.png');
 }
 
 .container {
@@ -323,13 +323,31 @@ section {
     width: 100%;
     text-align: left;
     color: #9993e3;
-    /* padding: 1rem; */
-    /* background: #9a93e3a2; */
-    /* border-radius: 10px; */
 }
 .form-row {
     display: flex;
     margin-bottom: 1.5rem;
+}
+
+.required {
+    color: #fff;
+    margin-bottom: 1.5rem;
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+    background: rgba(119, 119, 245, 0.8);
+    padding: 0.4rem;
+    border-left: 5px solid #fff;
+}
+.required img {
+    width: clamp(15px, 3vw, 20px);
+    margin-right: 1rem;
+}
+
+.required p {
+    font-size: clamp(9px, 1.3vw, 13px);
+    margin: 0;
+    margin-top: 0.1rem;
 }
 
 label:not(.option) {
@@ -511,5 +529,9 @@ footer p > a {
     }
     .btn-submit {
         font-size: 12px;
+    }
+
+    .required {
+        width: 100%;
     }
 }
