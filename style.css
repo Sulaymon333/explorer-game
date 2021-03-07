@@ -127,7 +127,7 @@ section {
 .hero-instructions,
 .hero-about,
 .hero-contact {
-    background-image: url('./images/main-bg-min.png');
+    background-image: url('./images/main-bg.jpg');
 }
 
 .container {
@@ -295,7 +295,7 @@ section {
 .video-section {
     position: relative;
     min-height: 50vh;
-    background-image: url('./images/image_mg1-3.png');
+    background-image: url('./images/video-section-bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
